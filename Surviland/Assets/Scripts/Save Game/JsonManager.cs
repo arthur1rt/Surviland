@@ -21,7 +21,8 @@ public class JsonManager
                 if (saveData == null)
                 {
                     saveData = new JsonData();
-                    saveData.dialogues = new Dictionary<string, NextDialogue>();
+                    saveData.dialogues = new Dictionary<string, NewDialogue>();
+                    saveData.allImages = new List<NewImage>();
                 }
 
                 _loadedData = saveData;
@@ -32,10 +33,11 @@ public class JsonManager
     }
 
 
-    public static void SaveGame(Dictionary<string, NextDialogue> allDialogues)
+    public static void SaveGame(Dictionary<string, NewDialogue> allDialogues, List<NewImage> allImages)
     {
         JsonData saveData = new JsonData();
-        saveData.dialogues = new Dictionary<string, NextDialogue>(allDialogues);
+        saveData.dialogues = new Dictionary<string, NewDialogue>(allDialogues);
+        saveData.allImages = new List<NewImage>(allImages);
 
         string json = JsonConvert.SerializeObject(saveData);
 
@@ -57,5 +59,6 @@ public class JsonManager
 
 public class JsonData
 {
-    public Dictionary<string, NextDialogue> dialogues;
+    public Dictionary<string, NewDialogue> dialogues;
+    public List<NewImage> allImages;
 }

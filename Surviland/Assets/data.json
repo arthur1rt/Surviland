@@ -9,11 +9,14 @@
                 "Yeah, that's super cool. I am a second dialogue :)"
             ],
             "_options": [
-                "Option 1",
+                "My option is this",
                 "Option 2"
             ],
-            "_speed": 0.05,
-            "_textColor": "ffffff"
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "island_healthy": true
+            }
         },
         "bb": {
             "_pathTillHere": [
@@ -30,8 +33,12 @@
                 "Option 33",
                 "Option 44"
             ],
-            "_speed": 0.05,
-            "_textColor": "ff2929"
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
         },
         "cc": {
             "_pathTillHere": [
@@ -45,8 +52,9 @@
                 "Option 11",
                 "Option 22"
             ],
-            "_speed": 0.05,
-            "_textColor": "ffffff"
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
         },
         "dd": {
             "_pathTillHere": [
@@ -63,8 +71,38 @@
                 "Option 3",
                 "Option 4"
             ],
-            "_speed": 0.05,
-            "_textColor": "ffffff"
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
         }
-    }
+    },
+    "allImages": [
+        {
+            "_imageName": "island_healthy",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "island_destroyed",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "img1",
+            "_xPos": 500.0,
+            "_yPos": 200.0,
+            "_layer": 1
+        },
+        {
+            "_imageName": "img2",
+            "_xPos": -300.0,
+            "_yPos": 100.0,
+            "_layer": 2
+        }
+    ]
 }

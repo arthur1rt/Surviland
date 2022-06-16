@@ -24,22 +24,25 @@ public class Dialogue : MonoBehaviour
 
     private float timer = 0;
 
-    private bool currentDialogueCompleted => displayText == allDialogue[dialogueToDisplay];
+    private bool currentDialogueCompleted => allDialogue == null || allDialogue.Count <= dialogueToDisplay || displayText == allDialogue[dialogueToDisplay];
 
-    private bool isThereMoreDialogue => dialogueToDisplay < allDialogue.Count;
+    private bool isThereMoreDialogue => dialogueToDisplay < allDialogue.Count - 1;
 
     private DialogueController diagController;
+
+    private bool waitingPlayerChoice;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        waitingPlayerChoice = false;
+
         displayText = "";
         dialogueToDisplay = 0;
 
         keyTextObj = transform.Find("Key").GetComponent<Text>();
-        // keyTextObj.color = keyColor;
-        keyTextObj.text = "> " + keyNeeded;
+
         SetKeyTextAlpha(keyAlphaWhenTyping);
 
         diagController = transform.GetComponentInParent<DialogueController>();
@@ -50,8 +53,7 @@ public class Dialogue : MonoBehaviour
     {
         if (allDialogue == null) return;
 
-
-        if (Input.GetKeyDown(keyNeeded))
+        if ((Input.GetKeyDown(keyNeeded) || Input.GetMouseButtonDown(0)) && !waitingPlayerChoice)
         {
             // player control over dialogue
             if (currentDialogueCompleted)
@@ -66,25 +68,27 @@ public class Dialogue : MonoBehaviour
             }
         }
 
-        if (isThereMoreDialogue == false)
+
+        if (currentDialogueCompleted)
         {
-            // dialogue is all done, delete obj
-            if (diagController.ShowOptionsForCurrentDialogue() == false)
+            if (isThereMoreDialogue)
             {
-                ClearAllDialogueBox();
+                SetKeyTextAlpha(keyAlphaWhenCompleted);
+            }
+            else
+            {
+                SetKeyTextAlpha(0);
+                if (!waitingPlayerChoice)
+                {
+                    diagController.ShowOptionsForCurrentDialogue();
+                    waitingPlayerChoice = true;
+                }
             }
             return;
         }
 
-
-        if (currentDialogueCompleted)
-        {
-            SetKeyTextAlpha(keyAlphaWhenCompleted);
-            return;
-        }
-
-
         SetKeyTextAlpha(keyAlphaWhenTyping);
+
 
         timer += Time.deltaTime;
 
@@ -95,16 +99,25 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    public void InitializeDialogue(List<string> _allDialogue)
+    private void InitializeDialogue(List<string> _allDialogue)
     {
         allDialogue = _allDialogue;
     }
 
-    public void InitializeDialogue(List<string> _allDialogue, float _typeSpeed)
+    // public void InitializeDialogue(List<string> _allDialogue, float _typeSpeed)
+    // {
+    //     InitializeDialogue(_allDialogue);
+    //     typeDelay = _typeSpeed;
+    // }
+
+
+
+    public void InitializeNewDialogue(NewDialogue dialogue)
     {
-        InitializeDialogue(_allDialogue);
-        typeDelay = _typeSpeed;
+        typeDelay = dialogue._typeSpeed;
+        InitializeDialogue(dialogue._allText);
     }
+
 
     private void AddLetter()
     {
@@ -134,10 +147,12 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    private void ClearAllDialogueBox()
+    public void ClearAllDialogueBox()
     {
+        waitingPlayerChoice = false;
         ClearDisplayText();
         keyTextObj.text = "";
+        allDialogue = null;
     }
 
 }
