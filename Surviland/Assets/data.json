@@ -1,0 +1,70 @@
+{
+    "dialogues": {
+        "aa": {
+            "_pathTillHere": [
+                "START"
+            ],
+            "_allText": [
+                "Hey, i'm a first dialogue, can u believe it?",
+                "Yeah, that's super cool. I am a second dialogue :)"
+            ],
+            "_options": [
+                "Option 1",
+                "Option 2"
+            ],
+            "_speed": 0.05,
+            "_textColor": "ffffff"
+        },
+        "bb": {
+            "_pathTillHere": [
+                "aa1"
+            ],
+            "_allText": [
+                "DDDD 1 LOL ",
+                "D2 dialogue 2",
+                "Dialogue 3 lol hahaha"
+            ],
+            "_options": [
+                "Option 11",
+                "Option 22",
+                "Option 33",
+                "Option 44"
+            ],
+            "_speed": 0.05,
+            "_textColor": "ff2929"
+        },
+        "cc": {
+            "_pathTillHere": [
+                "bb1",
+                "bb3"
+            ],
+            "_allText": [
+                "another option of text"
+            ],
+            "_options": [
+                "Option 11",
+                "Option 22"
+            ],
+            "_speed": 0.05,
+            "_textColor": "ffffff"
+        },
+        "dd": {
+            "_pathTillHere": [
+                "bb2",
+                "bb4"
+            ],
+            "_allText": [
+                "again, different one",
+                "this one has two texts lol"
+            ],
+            "_options": [
+                "Option 1",
+                "Option 2",
+                "Option 3",
+                "Option 4"
+            ],
+            "_speed": 0.05,
+            "_textColor": "ffffff"
+        }
+    }
+}
