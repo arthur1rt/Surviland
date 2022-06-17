@@ -30,7 +30,8 @@ public class DialogueController : MonoBehaviour
         // List<string> paths = new List<string> { "START" };
         // Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
         // imgConfig.Add("island_healthy", true);
-        // NewDialogue dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // List<float> weights = new List<float> { 10, -10 };
+        // NewDialogue dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         // allDiag.Add("aa", dd);
 
         // texts = new List<string> { "DDDD 1 LOL ", "D2 dialogue 2", "Dialogue 3 lol hahaha" };
@@ -39,14 +40,16 @@ public class DialogueController : MonoBehaviour
         // imgConfig = new Dictionary<string, bool>();
         // imgConfig.Add("island_healthy", false);
         // imgConfig.Add("island_destroyed", true);
-        // dd = new NewDialogue(paths, texts, options, 0.02f, "ff2929", imgConfig);
+        // weights = new List<float> { 10, -10, 0, -25 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ff2929", imgConfig);
         // allDiag.Add("bb", dd);
 
         // texts = new List<string> { "another option of text" };
         // options = new List<string> { "Option 11", "Option 22" };
         // paths = new List<string> { "bb1", "bb3" };
         // imgConfig = new Dictionary<string, bool>();
-        // dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // weights = new List<float> { 20, -10 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         // allDiag.Add("cc", dd);
 
         // texts = new List<string> { "again, different one", "this one has two texts lol" };
@@ -55,7 +58,8 @@ public class DialogueController : MonoBehaviour
         // imgConfig = new Dictionary<string, bool>();
         // imgConfig.Add("img1", true);
         // imgConfig.Add("img2", true);
-        // dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // weights = new List<float> { 10, -10, 0, -25 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         // allDiag.Add("dd", dd);
 
 
@@ -139,7 +143,10 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            optionsToReveal = new List<GameObject>(allOptionObjects);
+            for (int i = 0; i < optionsText.Count; i++)
+            {
+                optionsToReveal.Add(allOptionObjects[i]);
+            }
         }
 
         int optionTextIndex = 0;
@@ -297,12 +304,13 @@ public class NewDialogue
     public List<string> _pathTillHere;
     public List<string> _allText;
     public List<string> _options;
+    public List<float> _optionsWeight;
     public float _typeSpeed;
     public string _textColor;
     public Dictionary<string, bool> _imageConfig;
 
 
-    public NewDialogue(List<string> pathTillHere, List<string> allText, List<string> options, float typeSpeed, string textColor, Dictionary<string, bool> imageConfig)
+    public NewDialogue(List<string> pathTillHere, List<string> allText, List<string> options, List<float> optionsWeight, float typeSpeed, string textColor, Dictionary<string, bool> imageConfig)
     {
         _pathTillHere = pathTillHere;
         _allText = allText;
@@ -310,6 +318,7 @@ public class NewDialogue
         _textColor = textColor;
         _options = options;
         _imageConfig = imageConfig;
+        _optionsWeight = optionsWeight;
     }
 }
 

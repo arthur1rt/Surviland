@@ -24,7 +24,7 @@ public class Dialogue : MonoBehaviour
 
     private float timer = 0;
 
-    private bool currentDialogueCompleted => allDialogue == null || allDialogue.Count <= dialogueToDisplay || displayText == allDialogue[dialogueToDisplay];
+    private bool currentDialogueCompleted => allDialogue.Count <= dialogueToDisplay || displayText == allDialogue[dialogueToDisplay];
 
     private bool isThereMoreDialogue => dialogueToDisplay < allDialogue.Count - 1;
 
@@ -102,6 +102,7 @@ public class Dialogue : MonoBehaviour
     private void InitializeDialogue(List<string> _allDialogue)
     {
         allDialogue = _allDialogue;
+        dialogueToDisplay = 0;
     }
 
     // public void InitializeDialogue(List<string> _allDialogue, float _typeSpeed)

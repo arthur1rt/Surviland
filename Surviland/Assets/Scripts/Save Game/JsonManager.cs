@@ -23,6 +23,10 @@ public class JsonManager
                     saveData = new JsonData();
                     saveData.dialogues = new Dictionary<string, NewDialogue>();
                     saveData.allImages = new List<NewImage>();
+                    saveData.gameEndConditions = new Dictionary<float, string>();
+                    saveData.gameEndConditions.Add(30, "humans_win");
+                    saveData.gameEndConditions.Add(70, "neutral");
+                    saveData.gameEndConditions.Add(100, "island_win");
                 }
 
                 _loadedData = saveData;
@@ -59,6 +63,7 @@ public class JsonManager
 
 public class JsonData
 {
+    public Dictionary<float, string> gameEndConditions;
     public Dictionary<string, NewDialogue> dialogues;
     public List<NewImage> allImages;
 }

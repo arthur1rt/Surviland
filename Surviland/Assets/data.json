@@ -1,16 +1,22 @@
 {
     "dialogues": {
-        "aa": {
+        "Introduction": {
             "_pathTillHere": [
                 "START"
             ],
             "_allText": [
-                "Hey, i'm a first dialogue, can u believe it?",
-                "Yeah, that's super cool. I am a second dialogue :)"
+                "Thousands of years have passed since your creation.",
+                "Miraculously undiscovered, you’ve grown and changed overtime with no intervention.",
+                "Lush trees are abundant. Wildlife thrive within your forest.",
+                "Sea creatures frolic in your surrounding coast.",
+                "The calming, consistent sound of your waterfall is everflowing.",
+                "You are paradise.",
+                "Unfortunately for you, nothing lasts forever.",
+                "Humans are a relentless breed.",
+                "You will soon be forced to choose, how will you Adapt to Survive?"
             ],
             "_options": [
-                "Option 1",
-                "Option 2"
+                "Proceed"
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
@@ -18,65 +24,99 @@
                 "island_healthy": true
             }
         },
-        "bb": {
+        "ScenarioA": {
             "_pathTillHere": [
-                "aa1"
+                "Introduction1"
             ],
             "_allText": [
-                "DDDD 1 LOL ",
-                "D2 dialogue 2",
-                "Dialogue 3 lol hahaha"
+                "A group of humans sailing the seas in search of new, untainted land spot you in the distance.",
+                "Ecstatic at their discovery, they paddle towards you.",
+                "As they grow closer, you are faced with a choice, what will you do?"
             ],
             "_options": [
-                "Option 11",
-                "Option 22",
-                "Option 33",
-                "Option 44"
+                "Allow the humans to set foot upon you.",
+                "Create a tsunami to try and drown them.",
+                "Ask a whale friend to capsize them.",
+                "Wrangle winds, hoping to push the boat away."
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
-        },
-        "cc": {
-            "_pathTillHere": [
-                "bb1",
-                "bb3"
-            ],
-            "_allText": [
-                "another option of text"
-            ],
-            "_options": [
-                "Option 11",
-                "Option 22"
-            ],
-            "_typeSpeed": 0.02,
-            "_textColor": "ffffff",
             "_imageConfig": {}
         },
-        "dd": {
+        "ScenarioAA": {
             "_pathTillHere": [
-                "bb2",
-                "bb4"
+                "ScenarioA1"
             ],
             "_allText": [
-                "again, different one",
-                "this one has two texts lol"
+                "The humans land ashore, marveled at your beauty."
             ],
             "_options": [
-                "Option 1",
-                "Option 2",
-                "Option 3",
-                "Option 4"
+                "Proceed"
             ],
             "_typeSpeed": 0.02,
-            "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_textColor": "ffffff"
+        },
+        "ScenarioAB": {
+            "_pathTillHere": [
+                "ScenarioA2"
+            ],
+            "_allText": [
+                "You muster up mighty waves that take the humans by surprise.",
+                "Try as they might to stay the course, their boat is overpowered and crashes onto the beach, shattering into pieces.",
+                "Miraculously, the humans survive."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff"
+        },
+        "ScenarioAC": {
+            "_pathTillHere": [
+                "ScenarioA3"
+            ],
+            "_allText": [
+                "The whale swims around them, nudging their boat but failing to cause any harm or act as a deterrent.",
+                "The humans get excited about the abundance of fish."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff"
+        },
+        "ScenarioAD": {
+            "_pathTillHere": [
+                "ScenarioA4"
+            ],
+            "_allText": [
+                "Wind is an unpredictable element, and you somehow push their boat towards you faster.",
+                "The humans celebrate their speedy approach, excited to land. Bar lowers slightly."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff"
+        },
+        "ScenarioB": {
+            "_pathTillHere": [
+                "ScenarioAA1",
+                "ScenarioAB1",
+                "ScenarioAC1",
+                "ScenarioAD1"
+            ],
+            "_allText": [
+                "Humans need shelter to survive, or so you hear. They make their way to the forest, approaching one of your beautiful trees with a huge axe."
+            ],
+            "_options": [
+                "Allow the humans to cut down a tree, you have plenty to spare.",
+                "Drop a beehive on their head.",
+                "Convince a monkey hiding in the tree to attack the humans.",
+                "Fell a nearby dying tree and try to crush the humans."
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929"
         }
     },
     "allImages": [
