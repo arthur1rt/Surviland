@@ -24,49 +24,49 @@ public class DialogueController : MonoBehaviour
 
     void Awake()
     {
-        Dictionary<string, NewDialogue> allDiag = new Dictionary<string, NewDialogue>();
-        List<string> texts = new List<string> { "Hey, i'm a first dialogue, can u believe it?", "Yeah, that's super cool. I am a second dialogue :)" };
-        List<string> options = new List<string> { "Option 1", "Option 2" };
-        List<string> paths = new List<string> { "START" };
-        Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("island_healthy", true);
-        NewDialogue dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("aa", dd);
+        // Dictionary<string, NewDialogue> allDiag = new Dictionary<string, NewDialogue>();
+        // List<string> texts = new List<string> { "Hey, i'm a first dialogue, can u believe it?", "Yeah, that's super cool. I am a second dialogue :)" };
+        // List<string> options = new List<string> { "Option 1", "Option 2" };
+        // List<string> paths = new List<string> { "START" };
+        // Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
+        // imgConfig.Add("island_healthy", true);
+        // NewDialogue dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("aa", dd);
 
-        texts = new List<string> { "DDDD 1 LOL ", "D2 dialogue 2", "Dialogue 3 lol hahaha" };
-        options = new List<string> { "Option 11", "Option 22", "Option 33", "Option 44" };
-        paths = new List<string> { "aa1" };
-        imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("island_healthy", false);
-        imgConfig.Add("island_destroyed", true);
-        dd = new NewDialogue(paths, texts, options, 0.02f, "ff2929", imgConfig);
-        allDiag.Add("bb", dd);
+        // texts = new List<string> { "DDDD 1 LOL ", "D2 dialogue 2", "Dialogue 3 lol hahaha" };
+        // options = new List<string> { "Option 11", "Option 22", "Option 33", "Option 44" };
+        // paths = new List<string> { "aa1" };
+        // imgConfig = new Dictionary<string, bool>();
+        // imgConfig.Add("island_healthy", false);
+        // imgConfig.Add("island_destroyed", true);
+        // dd = new NewDialogue(paths, texts, options, 0.02f, "ff2929", imgConfig);
+        // allDiag.Add("bb", dd);
 
-        texts = new List<string> { "another option of text" };
-        options = new List<string> { "Option 11", "Option 22" };
-        paths = new List<string> { "bb1", "bb3" };
-        imgConfig = new Dictionary<string, bool>();
-        dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("cc", dd);
+        // texts = new List<string> { "another option of text" };
+        // options = new List<string> { "Option 11", "Option 22" };
+        // paths = new List<string> { "bb1", "bb3" };
+        // imgConfig = new Dictionary<string, bool>();
+        // dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("cc", dd);
 
-        texts = new List<string> { "again, different one", "this one has two texts lol" };
-        options = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4" };
-        paths = new List<string> { "bb2", "bb4" };
-        imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("img1", true);
-        imgConfig.Add("img2", true);
-        dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("dd", dd);
-
-
-        List<NewImage> imageRef = new List<NewImage>();
-        imageRef.Add(new NewImage("island_healthy", 0, 0, 0));
-        imageRef.Add(new NewImage("island_destroyed", 0, 0, 0));
-        imageRef.Add(new NewImage("img1", 500, 200, 1));
-        imageRef.Add(new NewImage("img2", -300, 100, 2));
+        // texts = new List<string> { "again, different one", "this one has two texts lol" };
+        // options = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4" };
+        // paths = new List<string> { "bb2", "bb4" };
+        // imgConfig = new Dictionary<string, bool>();
+        // imgConfig.Add("img1", true);
+        // imgConfig.Add("img2", true);
+        // dd = new NewDialogue(paths, texts, options, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("dd", dd);
 
 
-        JsonManager.SaveGame(allDiag, imageRef);
+        // List<NewImage> imageRef = new List<NewImage>();
+        // imageRef.Add(new NewImage("island_healthy", 0, 0, 0));
+        // imageRef.Add(new NewImage("island_destroyed", 0, 0, 0));
+        // imageRef.Add(new NewImage("img1", 500, 200, 1));
+        // imageRef.Add(new NewImage("img2", -300, 100, 2));
+
+
+        // JsonManager.SaveGame(allDiag, imageRef);
     }
 
     // Start is called before the first frame update
@@ -222,12 +222,20 @@ public class DialogueController : MonoBehaviour
             // updates the number of images needed
             if (imagesNeeded < 0)
             {
-                Destroy(imagesFolder.transform.GetChild(0));
+                while (imagesNeeded < 0)
+                {
+                    Destroy(imagesFolder.transform.GetChild(0));
+                    imagesNeeded++;
+                }
             }
             else if (imagesNeeded > 0)
             {
-                GameObject newImg = Instantiate(imagePrefab);
-                newImg.transform.SetParent(imagesFolder.transform);
+                while (imagesNeeded > 0)
+                {
+                    GameObject newImg = Instantiate(imagePrefab);
+                    newImg.transform.SetParent(imagesFolder.transform);
+                    imagesNeeded--;
+                }
             }
 
             // order all the images to be displayed
