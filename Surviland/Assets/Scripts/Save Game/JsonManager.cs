@@ -6,7 +6,8 @@ using System.IO;
 
 public class JsonManager
 {
-    public static string DATA_FILE_PATH => Application.dataPath + "/data.json";
+    public static string DATA_FILE_PATH => Application.dataPath + "/dialogue.json";
+    public static string SAVEDATA_FILE_PATH => Application.dataPath + "/data.json";
 
     private static JsonData _loadedData;
     public static JsonData loadedData
@@ -47,7 +48,7 @@ public class JsonManager
         string json = JsonConvert.SerializeObject(saveData);
 
         MakeSureDataFileExists();
-        File.WriteAllText(DATA_FILE_PATH, json);
+        File.WriteAllText(SAVEDATA_FILE_PATH, json);
 
         _loadedData = saveData;
     }

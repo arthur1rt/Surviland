@@ -1,0 +1,283 @@
+{
+    "gameEndConditions": {
+        "30": "humans_win",
+        "70": "neutral",
+        "100": "island_win"
+    },
+    "dialogues": {
+        "Introduction": {
+            "_pathTillHere": [
+                "START"
+            ],
+            "_allText": [
+                "Thousands of years have passed since your creation.",
+                "Miraculously undiscovered, you’ve grown and changed overtime with no intervention.",
+                "Lush trees are abundant. Wildlife thrive within your forest.",
+                "Sea creatures frolic in your surrounding coast.",
+                "The calming, consistent sound of your waterfall is everflowing.",
+                "You are paradise.",
+                "Unfortunately for you, nothing lasts forever.",
+                "Humans are a relentless breed.",
+                "You will soon be forced to choose, how will you Adapt to Survive?"
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "island_healthy": true
+            }
+        },
+        "ScenarioA": {
+            "_pathTillHere": [
+                "Introduction1"
+            ],
+            "_allText": [
+                "A group of humans sailing the seas in search of new, untainted land spot you in the distance.",
+                "Ecstatic at their discovery, they paddle towards you.",
+                "As they grow closer, you are faced with a choice, what will you do?"
+            ],
+            "_options": [
+                "Allow the humans to set foot upon you.",
+                "Create a tsunami to try and drown them.",
+                "Ask a whale friend to capsize them.",
+                "Wrangle winds, hoping to push the boat away."
+            ],
+            "_optionsWeight": [
+                0,
+                10.0,
+                -10.0,
+                -10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioAA": {
+            "_pathTillHere": [
+                "ScenarioA1"
+            ],
+            "_allText": [
+                "The humans land ashore, marveled at your beauty."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioAB": {
+            "_pathTillHere": [
+                "ScenarioA2"
+            ],
+            "_allText": [
+                "You muster up mighty waves that take the humans by surprise.",
+                "Try as they might to stay the course, their boat is overpowered and crashes onto the beach, shattering into pieces.",
+                "Miraculously, the humans survive."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioAC": {
+            "_pathTillHere": [
+                "ScenarioA3"
+            ],
+            "_allText": [
+                "The whale swims around them, nudging their boat but failing to cause any harm or act as a deterrent.",
+                "The humans get excited about the abundance of fish."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioAD": {
+            "_pathTillHere": [
+                "ScenarioA4"
+            ],
+            "_allText": [
+                "Wind is an unpredictable element, and you somehow push their boat towards you faster.",
+                "The humans celebrate their speedy approach, excited to land. Bar lowers slightly."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioB": {
+            "_pathTillHere": [
+                "ScenarioAA1",
+                "ScenarioAB1",
+                "ScenarioAC1",
+                "ScenarioAD1"
+            ],
+            "_allText": [
+                "Humans need shelter to survive, or so you hear. They make their way to the forest, approaching one of your beautiful trees with a huge axe."
+            ],
+            "_options": [
+                "Allow the humans to cut down a tree, you have plenty to spare.",
+                "Drop a beehive on their head.",
+                "Convince a monkey hiding in the tree to attack the humans.",
+                "Fell a nearby dying tree and try to crush the humans."
+            ],
+            "_optionsWeight": [
+                -10,
+                0,
+                -10,
+                10
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioBA": {
+            "_pathTillHere": [
+                "ScenarioA1"
+            ],
+            "_allText": [
+                "The humans cut down a tree with ease.  They get greedy and cut down more and more trees.  You feel empty inside, and feel yourself start to fade."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioAB": {
+            "_pathTillHere": [
+                "ScenarioA2"
+            ],
+            "_allText": [
+                "The human strikes your tree, and a beehive falls from above, landing at his feet.",
+                "Fist-sized hornets unlike these humans have ever seen before form a killer swarm; however, one of the humans pulls out a bottle of poison and kills the hornets before they can attack.",
+                "Shaken up, but undeterred, the humans quickly fell the tree, take what they want, and scurry back to where their camp is starting be set up."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioAC": {
+            "_pathTillHere": [
+                "ScenarioA3"
+            ],
+            "_allText": [
+                "As the humans approach the tree, a monkey leaps from above and starts bashing one of the humans on the head with a coconut.",
+                "One of the other humans pulls out a pistol and shoots the monkey dead.",
+                "The humans decide the animals are clearly vicious and bloodthirsty, and may not take kindly to the next animal they encounter."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioAD": {
+            "_pathTillHere": [
+                "ScenarioA4"
+            ],
+            "_allText": [
+                "As they humans approach the tree, a nearby dying tree falls.",
+                "The woodcutter attempts to dive out of the way, but the tree lands on his foot, fracturing it.",
+                "The other humans cut up this tree for shelter and help the injured one back to camp.  They are visibly discouraged."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+    },
+    "allImages": [
+        {
+            "_imageName": "island_healthy",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "island_destroyed",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "img1",
+            "_xPos": 500.0,
+            "_yPos": 200.0,
+            "_layer": 1
+        },
+        {
+            "_imageName": "img2",
+            "_xPos": -300.0,
+            "_yPos": 100.0,
+            "_layer": 2
+        }
+    ]
+}

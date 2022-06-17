@@ -330,7 +330,11 @@ public class DialogueController : MonoBehaviour
         optionIndex = number - skippedButtons;
         gameController.ChangeLife(allDialogues[dialogueDisplaying]._optionsWeight[optionIndex]);
         dialoguePath = dialogueDisplaying + optionIndex;
-        print("New dialogue path: " + dialoguePath);
+
+        if (allDialoguePaths.ContainsKey(dialoguePath))
+
+
+            print("New dialogue path: " + dialoguePath);
         dialogueBox.ClearAllDialogueBox();
         UpdateDialogue();
         HideAllOptions();
