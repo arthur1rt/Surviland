@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
@@ -24,6 +25,7 @@ public class DialogueController : MonoBehaviour
 
     private GameController gameController;
 
+    private bool gameIsOver = false;
 
     void Awake()
     {
@@ -33,7 +35,7 @@ public class DialogueController : MonoBehaviour
         List<string> paths = new List<string> { "START" };
         Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
         imgConfig.Add("island_healthy", true);
-        List<float> weights = new List<float> { 10, -10 };
+        List<float> weights = new List<float> { };
         NewDialogue dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         allDiag.Add("aa", dd);
 
@@ -61,7 +63,7 @@ public class DialogueController : MonoBehaviour
         imgConfig = new Dictionary<string, bool>();
         imgConfig.Add("img1", true);
         imgConfig.Add("img2", true);
-        weights = new List<float> { 10, -10, 0, -25 };
+        weights = new List<float> { 10, -10 };
         dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         allDiag.Add("dd", dd);
 
@@ -150,12 +152,6 @@ public class DialogueController : MonoBehaviour
 
         HideAllOptions();
         UpdateDialogue();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private void ShowDialogue(string dialogueKey)
@@ -311,6 +307,11 @@ public class DialogueController : MonoBehaviour
 
     public void ChooseOption(int number)
     {
+        if (gameIsOver)
+        {
+            SceneManager.LoadScene("EndGame");
+            return;
+        }
         int optionIndex = -1;
         int skippedButtons = 0;
         for (int i = 0; i < allOptionObjects.Length; i++)
@@ -328,16 +329,59 @@ public class DialogueController : MonoBehaviour
         }
 
         optionIndex = number - skippedButtons;
-        gameController.ChangeLife(allDialogues[dialogueDisplaying]._optionsWeight[optionIndex]);
+        print(optionIndex);
+        try
+        {
+            gameController.ChangeLife(allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
+        }
+        catch
+        {
+            Debug.LogError("Missing optionWeight value for dialogue " + dialogueDisplaying + " option " + optionIndex);
+        }
         dialoguePath = dialogueDisplaying + optionIndex;
-
-        if (allDialoguePaths.ContainsKey(dialoguePath))
-
-
-            print("New dialogue path: " + dialoguePath);
         dialogueBox.ClearAllDialogueBox();
+
+        if (allDialoguePaths.ContainsKey(dialoguePath) == false)
+        {
+            print("Game over. No path has been found for " + dialoguePath);
+            GameOver();
+        }
+        else
+        {
+            print("New dialogue path: " + dialoguePath);
+            UpdateDialogue();
+            HideAllOptions();
+        }
+    }
+
+
+    private void GameOver()
+    {
+        List<float> sorted = new List<float>();
+        while (sorted.Count < JsonManager.loadedData.gameEndConditions.Keys.Count)
+        {
+            float smallest = 999;
+            foreach (float val in JsonManager.loadedData.gameEndConditions.Keys)
+            {
+                if (sorted.Contains(val) == false && val < smallest)
+                {
+                    smallest = val;
+                }
+            }
+            sorted.Add(smallest);
+        }
+
+        foreach (float val in sorted)
+        {
+            if (gameController.life <= val)
+            {
+                dialoguePath = JsonManager.loadedData.gameEndConditions[val];
+                break;
+            }
+        }
         UpdateDialogue();
         HideAllOptions();
+        gameIsOver = true;
     }
 }
 

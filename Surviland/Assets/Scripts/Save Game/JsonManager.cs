@@ -16,7 +16,7 @@ public class JsonManager
         {
             if (_loadedData == null)
             {
-                MakeSureDataFileExists();
+                MakeSureDataFileExists(DATA_FILE_PATH);
                 string json = File.ReadAllText(DATA_FILE_PATH);
                 JsonData saveData = JsonConvert.DeserializeObject<JsonData>(json);
                 if (saveData == null)
@@ -47,18 +47,18 @@ public class JsonManager
 
         string json = JsonConvert.SerializeObject(saveData);
 
-        MakeSureDataFileExists();
+        MakeSureDataFileExists(SAVEDATA_FILE_PATH);
         File.WriteAllText(SAVEDATA_FILE_PATH, json);
 
-        _loadedData = saveData;
+        // _loadedData = saveData;
     }
 
 
-    public static void MakeSureDataFileExists()
+    public static void MakeSureDataFileExists(string fileName)
     {
-        if (!File.Exists(DATA_FILE_PATH))
+        if (!File.Exists(fileName))
         {
-            File.AppendAllText(DATA_FILE_PATH, "");
+            File.AppendAllText(fileName, "");
         }
     }
 }
