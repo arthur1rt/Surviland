@@ -5,9 +5,33 @@
         "100": "island_win"
     },
     "islandImageByHealth": {
-        "30": "island_destroyed",
-        "70": "island_healthy",
-        "100": "island_healthy"
+        "30": [
+            "Island_destroyed"
+        ],
+        "40": [
+            "Terrain_03Overdeveloped",
+            "Island_healthy",
+            "Forest-DESTROYED",
+            "Bushes-HEALTHY"
+        ],
+        "50": [
+            "Terrain_02Settled",
+            "Island_healthy",
+            "Forest-HEALTHY",
+            "Bushes-HEALTHY"
+        ],
+        "60": [
+            "Terrain_01Explored",
+            "Island_healthy",
+            "Forest-HEALTHY",
+            "Bushes-HEALTHY"
+        ],
+        "70": [
+            "Island_healthy",
+            "Forest-HEALTHY",
+            "Bushes-HEALTHY",
+            "fish"
+        ]
     },
     "dialogues": {
         "island_win": {
@@ -109,9 +133,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "island_healthy": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioA": {
             "_pathTillHere": [
@@ -136,10 +158,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioAA": {
             "_pathTillHere": [
@@ -175,10 +194,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioAC": {
             "_pathTillHere": [
@@ -196,10 +212,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioAD": {
             "_pathTillHere": [
@@ -217,10 +230,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioB": {
             "_pathTillHere": [
@@ -246,10 +256,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioBA": {
             "_pathTillHere": [
@@ -285,10 +292,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioBC": {
             "_pathTillHere": [
@@ -307,10 +311,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioBD": {
             "_pathTillHere": [
@@ -329,10 +330,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioC": {
             "_pathTillHere": [
@@ -362,10 +360,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioCA": {
             "_pathTillHere": [
@@ -399,10 +394,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioCC": {
             "_pathTillHere": [
@@ -419,10 +411,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioCD": {
             "_pathTillHere": [
@@ -440,10 +429,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioD": {
             "_pathTillHere": [
@@ -470,10 +456,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioDA": {
             "_pathTillHere": [
@@ -510,10 +493,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioDC": {
             "_pathTillHere": [
@@ -533,10 +513,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioDD": {
             "_pathTillHere": [
@@ -554,10 +531,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioE": {
             "_pathTillHere": [
@@ -584,10 +558,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioEA": {
             "_pathTillHere": [
@@ -625,10 +596,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioEC": {
             "_pathTillHere": [
@@ -649,10 +617,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioED": {
             "_pathTillHere": [
@@ -670,10 +635,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioF": {
             "_pathTillHere": [
@@ -700,10 +662,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioFA": {
             "_pathTillHere": [
@@ -742,10 +701,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioFC": {
             "_pathTillHere": [
@@ -763,10 +719,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioFD": {
             "_pathTillHere": [
@@ -785,10 +738,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioG": {
             "_pathTillHere": [
@@ -815,10 +765,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioGA": {
             "_pathTillHere": [
@@ -854,10 +801,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioGC": {
             "_pathTillHere": [
@@ -876,10 +820,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioGD": {
             "_pathTillHere": [
@@ -898,10 +839,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioH": {
             "_pathTillHere": [
@@ -926,10 +864,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioHA": {
             "_pathTillHere": [
@@ -968,10 +903,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioHC": {
             "_pathTillHere": [
@@ -991,10 +923,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "Scenario(H)": {
             "_pathTillHere": [
@@ -1019,10 +948,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ff2929",
-            "_imageConfig": {
-                "island_healthy": false,
-                "island_destroyed": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioIA": {
             "_pathTillHere": [
@@ -1060,10 +986,7 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         },
         "ScenarioIC": {
             "_pathTillHere": [
@@ -1084,21 +1007,36 @@
             ],
             "_typeSpeed": 0.02,
             "_textColor": "ffffff",
-            "_imageConfig": {
-                "img1": true,
-                "img2": true
-            }
+            "_imageConfig": {}
         }
     },
     "allImages": [
         {
-            "_imageName": "island_healthy",
+            "_imageName": "Island_healthy",
             "_xPos": 0.0,
             "_yPos": 0.0,
             "_layer": 0
         },
         {
-            "_imageName": "island_destroyed",
+            "_imageName": "Island_destroyed",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "Terrain_03Overdeveloped",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "Terrain_02Settled",
+            "_xPos": 0.0,
+            "_yPos": 0.0,
+            "_layer": 0
+        },
+        {
+            "_imageName": "Terrain_01Explored",
             "_xPos": 0.0,
             "_yPos": 0.0,
             "_layer": 0
@@ -1114,6 +1052,42 @@
             "_xPos": -300.0,
             "_yPos": 100.0,
             "_layer": 2
+        },
+        {
+            "_imageName": "Forest-HEALTHY",
+            "_xPos": -373,
+            "_yPos": 178,
+            "_layer": 1
+        },
+        {
+            "_imageName": "Bushes-HEALTHY",
+            "_xPos": 318,
+            "_yPos": 19,
+            "_layer": 1
+        },
+        {
+            "_imageName": "fish",
+            "_xPos": -125,
+            "_yPos": 74,
+            "_layer": 1
+        },
+        {
+            "_imageName": "SHELTER",
+            "_xPos": -110,
+            "_yPos": 1,
+            "_layer": 1
+        },
+        {
+            "_imageName": "FARMLAND",
+            "_xPos": 0,
+            "_yPos": 0,
+            "_layer": 1
+        },
+        {
+            "_imageName": "Forest-DESTROYED",
+            "_xPos": -380,
+            "_yPos": 129,
+            "_layer": 1
         }
     ]
 }

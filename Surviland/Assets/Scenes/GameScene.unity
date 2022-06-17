@@ -420,10 +420,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 403012128}
     m_Modifications:
-    - target: {fileID: 4527095838741699933, guid: da7e5289da58e944093ce0100a088382, type: 3}
-      propertyPath: m_Text
-      value: HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-      objectReference: {fileID: 0}
     - target: {fileID: 4527095840158337106, guid: da7e5289da58e944093ce0100a088382, type: 3}
       propertyPath: m_Name
       value: PlayableArea
@@ -462,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527095840158337107, guid: da7e5289da58e944093ce0100a088382, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 250
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4527095840158337107, guid: da7e5289da58e944093ce0100a088382, type: 3}
       propertyPath: m_LocalPosition.x
@@ -498,7 +494,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4527095840158337107, guid: da7e5289da58e944093ce0100a088382, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 120
+      value: 99.3
       objectReference: {fileID: 0}
     - target: {fileID: 4527095840158337107, guid: da7e5289da58e944093ce0100a088382, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -27,90 +27,88 @@ public class DialogueController : MonoBehaviour
 
     private bool gameIsOver = false;
 
-    private NewImage background;
-
     void Awake()
     {
-        Dictionary<string, NewDialogue> allDiag = new Dictionary<string, NewDialogue>();
-        List<string> texts = new List<string> { "Hey, i'm a first dialogue, can u believe it?", "Yeah, that's super cool. I am a second dialogue :)" };
-        List<string> options = new List<string> { "Option 1", "Option 2" };
-        List<string> paths = new List<string> { "START" };
-        Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("island_healthy", true);
-        List<float> weights = new List<float> { -40, 0 };
-        NewDialogue dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("aa", dd);
+        // Dictionary<string, NewDialogue> allDiag = new Dictionary<string, NewDialogue>();
+        // List<string> texts = new List<string> { "Hey, i'm a first dialogue, can u believe it?", "Yeah, that's super cool. I am a second dialogue :)" };
+        // List<string> options = new List<string> { "Option 1", "Option 2" };
+        // List<string> paths = new List<string> { "START" };
+        // Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
+        // imgConfig.Add("island_healthy", true);
+        // List<float> weights = new List<float> { -40, 0 };
+        // NewDialogue dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("aa", dd);
 
-        texts = new List<string> { "DDDD 1 LOL ", "D2 dialogue 2", "Dialogue 3 lol hahaha" };
-        options = new List<string> { "Option 11", "Option 22", "Option 33", "Option 44" };
-        paths = new List<string> { "aa1" };
-        imgConfig = new Dictionary<string, bool>();
-        weights = new List<float> { -40, -10, 0, -25 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ff2929", imgConfig);
-        allDiag.Add("bb", dd);
+        // texts = new List<string> { "DDDD 1 LOL ", "D2 dialogue 2", "Dialogue 3 lol hahaha" };
+        // options = new List<string> { "Option 11", "Option 22", "Option 33", "Option 44" };
+        // paths = new List<string> { "aa1" };
+        // imgConfig = new Dictionary<string, bool>();
+        // weights = new List<float> { -40, -10, 0, -25 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ff2929", imgConfig);
+        // allDiag.Add("bb", dd);
 
-        texts = new List<string> { "another option of text" };
-        options = new List<string> { "Option 11", "Option 22" };
-        paths = new List<string> { "bb1", "bb3" };
-        imgConfig = new Dictionary<string, bool>();
-        weights = new List<float> { 20, -10 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("cc", dd);
+        // texts = new List<string> { "another option of text" };
+        // options = new List<string> { "Option 11", "Option 22" };
+        // paths = new List<string> { "bb1", "bb3" };
+        // imgConfig = new Dictionary<string, bool>();
+        // weights = new List<float> { 20, -10 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("cc", dd);
 
-        texts = new List<string> { "again, different one", "this one has two texts lol" };
-        options = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4" };
-        paths = new List<string> { "bb2", "bb4" };
-        imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("img1", true);
-        imgConfig.Add("img2", true);
-        weights = new List<float> { 10, -10 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("dd", dd);
-
-
-
-        texts = new List<string> { "Ending 1 too bad" };
-        options = new List<string> { "Island win" };
-        paths = new List<string> { "island_win" };
-        imgConfig = new Dictionary<string, bool>();
-        weights = new List<float> { 0 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("island_win", dd);
-
-        texts = new List<string> { "Ending 2 too bad" };
-        options = new List<string> { "Neutral" };
-        paths = new List<string> { "neutral" };
-        imgConfig = new Dictionary<string, bool>();
-        weights = new List<float> { 0 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("neutral", dd);
-
-        texts = new List<string> { "Ending 3" };
-        options = new List<string> { "Humans win" };
-        paths = new List<string> { "humans_win" };
-        imgConfig = new Dictionary<string, bool>();
-        weights = new List<float> { 0 };
-        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
-        allDiag.Add("humans_win", dd);
+        // texts = new List<string> { "again, different one", "this one has two texts lol" };
+        // options = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4" };
+        // paths = new List<string> { "bb2", "bb4" };
+        // imgConfig = new Dictionary<string, bool>();
+        // imgConfig.Add("img1", true);
+        // imgConfig.Add("img2", true);
+        // weights = new List<float> { 10, -10 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("dd", dd);
 
 
 
-        List<NewImage> imageRef = new List<NewImage>();
-        imageRef.Add(new NewImage("island_healthy", 0, 0, 0));
-        imageRef.Add(new NewImage("island_destroyed", 0, 0, 0));
-        imageRef.Add(new NewImage("img1", 500, 200, 1));
-        imageRef.Add(new NewImage("img2", -300, 100, 2));
+        // texts = new List<string> { "Ending 1 too bad" };
+        // options = new List<string> { "Island win" };
+        // paths = new List<string> { "island_win" };
+        // imgConfig = new Dictionary<string, bool>();
+        // weights = new List<float> { 0 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("island_win", dd);
 
-        Dictionary<float, string> endConditions = new Dictionary<float, string>();
-        endConditions.Add(30, "humans_win");
-        endConditions.Add(70, "neutral");
-        endConditions.Add(100, "island_win");
+        // texts = new List<string> { "Ending 2 too bad" };
+        // options = new List<string> { "Neutral" };
+        // paths = new List<string> { "neutral" };
+        // imgConfig = new Dictionary<string, bool>();
+        // weights = new List<float> { 0 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("neutral", dd);
 
-        Dictionary<float, string> imageByLife = new Dictionary<float, string>();
-        imageByLife.Add(30, "island_destroyed");
-        imageByLife.Add(70, "island_healthy");
-        imageByLife.Add(100, "island_healthy");
-        JsonManager.SaveGame(endConditions, allDiag, imageByLife, imageRef);
+        // texts = new List<string> { "Ending 3" };
+        // options = new List<string> { "Humans win" };
+        // paths = new List<string> { "humans_win" };
+        // imgConfig = new Dictionary<string, bool>();
+        // weights = new List<float> { 0 };
+        // dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        // allDiag.Add("humans_win", dd);
+
+
+
+        // List<NewImage> imageRef = new List<NewImage>();
+        // imageRef.Add(new NewImage("island_healthy", 0, 0, 0));
+        // imageRef.Add(new NewImage("island_destroyed", 0, 0, 0));
+        // imageRef.Add(new NewImage("img1", 500, 200, 1));
+        // imageRef.Add(new NewImage("img2", -300, 100, 2));
+
+        // Dictionary<float, string> endConditions = new Dictionary<float, string>();
+        // endConditions.Add(30, "humans_win");
+        // endConditions.Add(70, "neutral");
+        // endConditions.Add(100, "island_win");
+
+        // Dictionary<float, List<string>> imageByLife = new Dictionary<float, List<string>>();
+        // imageByLife.Add(30, new List<string> { "island_destroyed", "image 2" });
+        // imageByLife.Add(70, new List<string> { "island_healthy", "image 2", "image 3" });
+        // imageByLife.Add(100, new List<string> { "island_healthy", "image 2" });
+        // JsonManager.SaveGame(endConditions, allDiag, imageByLife, imageRef);
     }
 
     // Start is called before the first frame update
@@ -233,32 +231,38 @@ public class DialogueController : MonoBehaviour
 
     private void UpdateImages()
     {
-        //refreshing bg image if needed
+        //refreshing images according to island life
         List<float> sortedBgConditions = GetSortedList(new List<float>(JsonManager.loadedData.islandImageByHealth.Keys));
+        bool imagesFound = false;
         foreach (float val in sortedBgConditions)
         {
-            if (gameController.life <= val)
+            if (!imagesFound && gameController.life <= val)
             {
-                if (imagesDisplaying.ContainsKey(JsonManager.loadedData.islandImageByHealth[val]) == false)
+                imagesFound = true;
+                foreach (string imgToAdd in JsonManager.loadedData.islandImageByHealth[val])
                 {
-                    // this image needs to be inputed there, but other bg image needs to be deleted from there
-                    foreach (string img in JsonManager.loadedData.islandImageByHealth.Values)
+                    if (imagesDisplaying.ContainsKey(imgToAdd) == false)
                     {
-                        if (imagesDisplaying.ContainsKey(img))
-                        {
-                            imagesDisplaying.Remove(img);
-                        }
+                        imagesDisplaying.Add(imgToAdd, allImagesById[imgToAdd]);
                     }
-                    imagesDisplaying.Add(JsonManager.loadedData.islandImageByHealth[val], allImagesById[JsonManager.loadedData.islandImageByHealth[val]]);
                 }
-                break;
+            }
+            else
+            {
+                foreach (string imgToRemove in JsonManager.loadedData.islandImageByHealth[val])
+                {
+                    if (imagesDisplaying.ContainsKey(imgToRemove))
+                    {
+                        imagesDisplaying.Remove(imgToRemove);
+                    }
+                }
+
             }
         }
 
         // refresh images displaying to add and remove images
         if (allDialogues.ContainsKey(dialogueDisplaying))
         {
-            int imagesNeeded = 0;
             foreach (string imageKey in allDialogues[dialogueDisplaying]._imageConfig.Keys)
             {
                 if (imagesDisplaying.ContainsKey(imageKey))
@@ -266,7 +270,6 @@ public class DialogueController : MonoBehaviour
                     if (allDialogues[dialogueDisplaying]._imageConfig[imageKey] == false)
                     {
                         imagesDisplaying.Remove(imageKey);
-                        imagesNeeded--;
                         continue;
                     }
                     else
@@ -282,15 +285,16 @@ public class DialogueController : MonoBehaviour
                     }
                     imagesDisplaying.Add(imageKey, allImagesById[imageKey]);
                 }
-                imagesNeeded++;
             }
+
+            int imagesNeeded = imagesDisplaying.Count - imagesFolder.transform.childCount;
 
             // updates the number of images needed
             if (imagesNeeded < 0)
             {
                 while (imagesNeeded < 0)
                 {
-                    Destroy(imagesFolder.transform.GetChild(0));
+                    Destroy(imagesFolder.transform.GetChild(0).gameObject);
                     imagesNeeded++;
                 }
             }
@@ -320,11 +324,16 @@ public class DialogueController : MonoBehaviour
                 orderedImages.Add(smallerLayer);
             }
 
+
             for (int i = 0; i < orderedImages.Count; i++)
             {
                 Transform child = imagesFolder.transform.GetChild(i);
                 child.GetComponent<Image>().sprite = allImagesById[orderedImages[i]._imageName].GetSprite();
                 child.GetComponent<RectTransform>().localPosition = new Vector2(orderedImages[i]._xPos, orderedImages[i]._yPos);
+                if (orderedImages[i].GetSprite() == null)
+                {
+                    Debug.LogError("No image in project for " + orderedImages[i]._imageName);
+                }
                 child.GetComponent<RectTransform>().sizeDelta = orderedImages[i].GetSprite().rect.size;
                 child.GetComponent<RectTransform>().localScale = Vector3.one;
             }
@@ -358,7 +367,7 @@ public class DialogueController : MonoBehaviour
         try
         {
             gameController.ChangeLife(allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
-            print("Damage: " + allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
+            // print("Damage: " + allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
         }
         catch
         {
