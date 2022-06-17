@@ -15,7 +15,14 @@
                 "island_win"
             ],
             "_allText": [
-                "Ending 1 too bad"
+                "Seasons change, and bring cold weather.",
+                "The humans suffer deep losses due to insufficient resource management and no structure in their community to withstand the harsh winter conditions.",
+                "Having been scared, maimed, and some even killed, the group is heavily reconsidering if “this island is worth it”.",
+                "Resolute, they spend their working hours crafting a larger boat and, eventually, set sail with their entire colony on board.",
+                "You can only assume they are off to find some other poor island to abuse, but the best you can do is send one “thought and prayer” to whatever land will be next.",
+                "You learned that one from the humans.",
+                "But for you, this means a quiet and peaceful winter.",
+                "You deserve a break."
             ],
             "_options": [
                 "Island win"
@@ -32,7 +39,15 @@
                 "neutral"
             ],
             "_allText": [
-                "Ending 2 too bad"
+                "These humans!",
+                "Sure, they got on your nerves at first and the relationship was a little rocky, but there really is something so charming about the little meatbags.",
+                "For starters, they absolutely adore you!",
+                "Worshiping you, praising your name. It did feel a little weird at first, but you’ve grown to care for them.",
+                "They are careful now, to only take what they need from your bounty and thank you for it every time.",
+                "Intertwining, humanity and nature coexist and thrive.",
+                "They birth children, and teach them respect for your land.",
+                "You bloom brighter than you can ever remember.",
+                "It’s amazing what a little appreciation can do."
             ],
             "_options": [
                 "Neutral"
@@ -49,7 +64,17 @@
                 "humans_win"
             ],
             "_allText": [
-                "Ending 3"
+                "Time passes, as it always does.",
+                "The empowerment you felt to fight for dignity has weakened, and you become passive.",
+                "Dormant.",
+                "While the humans succeed in planting their roots firmly into your soil by building families, farms and factories, you come to a slow realization that each of them thinks they are fundamentally good;",
+                "Their atrocities necessary for survival, and thus, justifiable.",
+                "They sicken you.",
+                "Your soil turns acidic.",
+                "The creatures you called friends die out with a whimper.",
+                "Even the humans themselves grow sallow, malnourished and weary.",
+                "You have been colonized, and no one truly benefits.",
+                "Change your tactics to thrive."
             ],
             "_options": [
                 "Humans win"
