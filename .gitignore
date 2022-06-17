@@ -1,2 +1,6 @@
 Surviland/Library
 Surviland/Temp
+Surviland/Library/**
+Surviland/Temp/**
+Surviland/Logs
+Surviland/Logs/**

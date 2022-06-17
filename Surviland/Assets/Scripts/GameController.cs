@@ -12,25 +12,26 @@ public class GameController : MonoBehaviour
     private float minLife = 0;
     private float currentLife = 100;
 
+    private float lifeDisplay = 0;
+
     // Start is called before the first frame update
     void Start()
     {
-        ChangeLife(-50);
+        // ChangeLife(-50);
     }
 
     // Update is called once per frame
     void Update()
     {
+        lifeDisplay = Mathf.Ceil(Mathf.Lerp(lifeDisplay, currentLife, Time.deltaTime * 2f));
+        healthText.GetComponent<Text>().text = lifeDisplay + "/100";
 
+        float newScale = Mathf.Clamp(lifeDisplay / maxLife, 0, 1);
+        healthBar.transform.localScale = new Vector3(newScale, 1, 1);
     }
 
     public void ChangeLife(float qty)
     {
         currentLife = Mathf.Clamp(currentLife + qty, minLife, maxLife);
-
-        float newScale = Mathf.Clamp(currentLife / maxLife, 0, 1);
-        healthBar.transform.localScale = new Vector3(newScale, 1, 1);
-
-        healthText.GetComponent<Text>().text = currentLife + "/100";
     }
 }

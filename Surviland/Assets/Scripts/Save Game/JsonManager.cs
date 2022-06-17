@@ -37,11 +37,12 @@ public class JsonManager
     }
 
 
-    public static void SaveGame(Dictionary<string, NewDialogue> allDialogues, List<NewImage> allImages)
+    public static void SaveGame(Dictionary<float, string> gameEndConditions, Dictionary<string, NewDialogue> allDialogues, List<NewImage> allImages)
     {
         JsonData saveData = new JsonData();
         saveData.dialogues = new Dictionary<string, NewDialogue>(allDialogues);
         saveData.allImages = new List<NewImage>(allImages);
+        saveData.gameEndConditions = new Dictionary<float, string>(gameEndConditions);
 
         string json = JsonConvert.SerializeObject(saveData);
 

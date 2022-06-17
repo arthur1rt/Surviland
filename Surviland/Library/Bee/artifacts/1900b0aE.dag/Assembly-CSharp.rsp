@@ -343,6 +343,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
 "Assets/Scripts/Dialogue/Dialogue.cs"
 "Assets/Scripts/Dialogue/DialogueController.cs"
+"Assets/Scripts/GameController.cs"
 "Assets/Scripts/Save Game/JsonManager.cs"
 -langversion:8.0
 
