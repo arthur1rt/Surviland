@@ -4,7 +4,63 @@
         "70": "neutral",
         "100": "island_win"
     },
+    "islandImageByHealth": {
+        "30": "island_destroyed",
+        "70": "island_healthy",
+        "100": "island_healthy"
+    },
     "dialogues": {
+        "island_win": {
+            "_pathTillHere": [
+                "island_win"
+            ],
+            "_allText": [
+                "Ending 1 too bad"
+            ],
+            "_options": [
+                "Island win"
+            ],
+            "_optionsWeight": [
+                0.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "neutral": {
+            "_pathTillHere": [
+                "neutral"
+            ],
+            "_allText": [
+                "Ending 2 too bad"
+            ],
+            "_options": [
+                "Neutral"
+            ],
+            "_optionsWeight": [
+                0.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "humans_win": {
+            "_pathTillHere": [
+                "humans_win"
+            ],
+            "_allText": [
+                "Ending 3"
+            ],
+            "_options": [
+                "Humans win"
+            ],
+            "_optionsWeight": [
+                0.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
         "Introduction": {
             "_pathTillHere": [
                 "START"
@@ -172,7 +228,7 @@
         },
         "ScenarioBA": {
             "_pathTillHere": [
-                "ScenarioA103"
+                "ScenarioB1"
             ],
             "_allText": [
                 "The humans cut down a tree with ease.  They get greedy and cut down more and more trees.  You feel empty inside, and feel yourself start to fade."
@@ -187,9 +243,9 @@
             "_textColor": "ffffff",
             "_imageConfig": {}
         },
-        "ScenarioAB": {
+        "ScenarioBB": {
             "_pathTillHere": [
-                "ScenarioA2"
+                "ScenarioB2"
             ],
             "_allText": [
                 "The human strikes your tree, and a beehive falls from above, landing at his feet.",
@@ -209,9 +265,9 @@
                 "img2": true
             }
         },
-        "ScenarioAC": {
+        "ScenarioBC": {
             "_pathTillHere": [
-                "ScenarioA3"
+                "ScenarioB3"
             ],
             "_allText": [
                 "As the humans approach the tree, a monkey leaps from above and starts bashing one of the humans on the head with a coconut.",
@@ -231,9 +287,9 @@
                 "img2": true
             }
         },
-        "ScenarioAD": {
+        "ScenarioBD": {
             "_pathTillHere": [
-                "ScenarioA4"
+                "ScenarioB4"
             ],
             "_allText": [
                 "As they humans approach the tree, a nearby dying tree falls.",
@@ -253,6 +309,761 @@
                 "img2": true
             }
         },
+        "ScenarioC": {
+            "_pathTillHere": [
+                "ScenarioBA1",
+                "ScenarioBB1",
+                "ScenarioBC1",
+                "ScenarioBD1"
+            ],
+            "_allText": [
+                "These humans do not stay still for long! You feel them walking towards a forest’s edge, plucking your flowers and squishing your bugs underfoot as they go.",
+                "They’re on the lookout for resources, especially food.",
+                "They come to notice a bush with particularly juicy looking berries - they’re one of your favorite fruits to watch ripen and then shrivel in the sun.",
+                "Although truth be told, every plant on you is your favorite.",
+                "They approach the bush greedily, hands and baskets ready."
+            ],
+            "_options": [
+                "There are other bushes, and eternal seasons. Let them take their fill.",
+                "Little do the humans know, this bush has thorns. You manipulate the branches to bring the hidden thorns right into their reach.",
+                "Let’s poison them! You speed up the fruiting process, making the berries inedible to humans.",
+                "Push out even more vines, thicker roots, and supersize the berries while they watch."
+            ],
+            "_optionsWeight": [
+                0,
+                10.0,
+                -10.0,
+                10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioCA": {
+            "_pathTillHere": [
+                "ScenarioC1"
+            ],
+            "_allText": [
+                "Chins dripping with bright pink juice, the humans head back to base camp with a large harvest."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioCB": {
+            "_pathTillHere": [
+                "ScenarioC2"
+            ],
+            "_allText": [
+                "In their hurry, the humans don’t notice the tiny (yet sharp) thorns on the vines of this bush, and come away from the fruit dripping with juice and blood."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioCC": {
+            "_pathTillHere": [
+                "ScenarioC3"
+            ],
+            "_allText": [
+                "Turns out, humans love fermented berries! They become quite silly, leaving a path of destruction behind them that is even larger than usual."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioCD": {
+            "_pathTillHere": [
+                "ScenarioC4"
+            ],
+            "_allText": [
+                "These humans have never seen a plant grow so fast, and they become wary of potential supernatural powers at play.",
+                "Being a superstitious bunch, they run back to camp screaming. And hungry."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioD": {
+            "_pathTillHere": [
+                "ScenarioCA1",
+                "ScenarioCB1",
+                "ScenarioCC1",
+                "ScenarioCD1"
+            ],
+            "_allText": [
+                "The humans stink, and notice your stunning pool at the bottom of your waterfall.",
+                "They make their way to the edge of the pool, strip down, and prepare to hop in."
+            ],
+            "_options": [
+                "Let them bask in your glory and bathe to their heart's content.",
+                "Attempt to boil them with your geothermal might.",
+                "Dislodge a rock atop the waterfall to crush them.",
+                "Allow them to swim for now, keeping a keen watch to act if needed."
+            ],
+            "_optionsWeight": [
+                -10.0,
+                0,
+                10.0,
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioDA": {
+            "_pathTillHere": [
+                "ScenarioD1"
+            ],
+            "_allText": [
+                "The humans enjoy themselves as they relax in your pool, but an unfamiliar bacteria they brought from their homeland washes off in the pool and contaminates it.",
+                "All the plants and algae appear to be infected and likely won’t live much longer."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioDB": {
+            "_pathTillHere": [
+                "ScenarioD2"
+            ],
+            "_allText": [
+                "The humans dip their toes in the pool and shriek out in pain as they find their feet scalded.",
+                "They are thankful they didn’t simply jump right in to be cooked alive.",
+                "They decide it best if they bathe in the ocean instead and leave the pool alone."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioDC": {
+            "_pathTillHere": [
+                "ScenarioD3"
+            ],
+            "_allText": [
+                "As they are about to settle into the pool, they hear noise atop the waterfall.",
+                "As one of the humans looks up, a rock plummets down from above, hitting him square in the eye.",
+                "Blinded and in pain, the human cries out in agony and retreats to the camp to be treated by his friends.",
+                "They can’t help but feel as though they are not welcome here."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioDD": {
+            "_pathTillHere": [
+                "ScenarioD4"
+            ],
+            "_allText": [
+                "Jumping, splashing, and diving into the pool, you can feel your string algae brush up against their toes.",
+                "For some reason this is extremely disgusting to them, and they all avoid that pool from now on."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioE": {
+            "_pathTillHere": [
+                "ScenarioDA1",
+                "ScenarioDB1",
+                "ScenarioDC1",
+                "ScenarioDD1"
+            ],
+            "_allText": [
+                "Human hunger is never truly sated, and they seem to decide the fish swimming off the coast look mighty tasty.",
+                "They prepare their fishing gear and approach the coast, ready to catch tonight’s dinner."
+            ],
+            "_options": [
+                "Encourage the fish to bite their lures.  Everyone deserves to eat.",
+                "Allow a shark to attack the fishermen.",
+                "Strike the fishing pole with lightning.",
+                "Visibly change the appearance of the local fish to look cuter."
+            ],
+            "_optionsWeight": [
+                -10.0,
+                0,
+                -10.0,
+                10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioEA": {
+            "_pathTillHere": [
+                "ScenarioE1"
+            ],
+            "_allText": [
+                "The humans cast their lures out and in what feels like an instant, feel a bite.",
+                "They reel in a delicious looking fish and can’t help but continue to cast and grow their haul.",
+                "If they keep this up, the population of fish will inevitably dwindle to nothing."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioEB": {
+            "_pathTillHere": [
+                "ScenarioE2"
+            ],
+            "_allText": [
+                "As the humans cast their lines, they notice a fin growing uncomfortably close to shore.",
+                "Just as the shark is about to snap the line, a fisherman pulls out a spear gun and kills the shark.",
+                "The humans decide it best to find an alternative food source, these waters feel a touch too dangerous."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioEC": {
+            "_pathTillHere": [
+                "ScenarioE3"
+            ],
+            "_allText": [
+                "Right as one of the humans raises his fishing pole to cast a lure, you strike it with lightning.",
+                "That ought to show them who’s boss.",
+                "Miraculously, the human lives, albeit with a new, pointier hairdoo.",
+                "You notice you accidentally struck more than just the human, as a group of dead fish float to the surface.",
+                "The humans gather the mass amount of fish, smiling ear to ear at their fortune."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioED": {
+            "_pathTillHere": [
+                "ScenarioE4"
+            ],
+            "_allText": [
+                "As the fishermen pull up their first catch, they notice its large, animated eyes that seem to say “please don’t eat me uwu”, and they start to gain a sense of empathy.",
+                "At least one fisherman becomes vegetarian, leading to reduced sources of food for the entire party."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioF": {
+            "_pathTillHere": [
+                "ScenarioEA1",
+                "ScenarioEB1",
+                "ScenarioEC1",
+                "ScenarioED1"
+            ],
+            "_allText": [
+                "The humans decide they want to light a bonfire and celebrate some of their feats.",
+                "As they set up their fire, you ponder how you feel about them burning a part of you in celebration."
+            ],
+            "_options": [
+                "Let the fire rage on, they deserve to celebrate their success.",
+                "Rain on their parade.",
+                "Stir up strong winds.",
+                "Rip a fissure into the earth beneath the fire."
+            ],
+            "_optionsWeight": [
+                -10.0,
+                0,
+                -10.0,
+                10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioFA": {
+            "_pathTillHere": [
+                "ScenarioF1"
+            ],
+            "_allText": [
+                "As the fire grows in height, sparks fly all about.",
+                "Some nearby shrubbery catches fire and the humans panic.",
+                "As one runs up to the fire with a bucket of water to douse it, he trips and falls into the fire, burning himself severely.",
+                "The others manage to put out the shrub fire and tend to his injury, but they appear much more reserved and perhaps a bit fearful of you."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioFB": {
+            "_pathTillHere": [
+                "ScenarioF2"
+            ],
+            "_allText": [
+                "Just as the humans get ready to celebrate, you create a mighty cloud that pours rain all over their party.",
+                "They react quickly, and raise up some large wooden stakes they had set aside and cover the fire with a tarp.",
+                "They then set out containers to catch the rain, thanking their Gods for the fresh water that has been bestowed upon them."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioFC": {
+            "_pathTillHere": [
+                "ScenarioF3"
+            ],
+            "_allText": [
+                "As the fire roars on, so do your winds as a brisk breeze turns to a near hurricane.",
+                "The humans realize the danger of having a bonfire with such strong winds and put it out with a new found respect for your elements"
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioFD": {
+            "_pathTillHere": [
+                "ScenarioF4"
+            ],
+            "_allText": [
+                "Well, that worked. A little too well.",
+                "Not only do two of the humans fall directly into the earth to their deaths, but so do several animals and their homes.",
+                "This fissure will never be repaired, and the humans will avoid it carefully while mourning their dead."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioG": {
+            "_pathTillHere": [
+                "ScenarioFA1",
+                "ScenarioFB1",
+                "ScenarioFC1",
+                "ScenarioFD1"
+            ],
+            "_allText": [
+                "Not too far from the human’s encampment, there’s a clearing in your trees with some fertile looking soil.",
+                "The humans decide to attempt to set up a farm here with some seeds they brought from their homeland."
+            ],
+            "_options": [
+                "Let the humans plant in peace.",
+                "Beat down on them with the sun.",
+                "Attempt to flood the farm.",
+                "Remove all nutrients from the soil they are toiling over."
+            ],
+            "_optionsWeight": [
+                0,
+                10.0,
+                -10.0,
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioGA": {
+            "_pathTillHere": [
+                "ScenarioG1"
+            ],
+            "_allText": [
+                "The humans plant their seeds, and after a few hours of backbreaking work, a nice plot of land is home to plenty of produce that should be ready in due time."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioGB": {
+            "_pathTillHere": [
+                "ScenarioG2"
+            ],
+            "_allText": [
+                "As the humans get to work, it gets inexplicably warmer.",
+                "Before the soil can even be prepared, a human passes out from heat exhaustion.",
+                "They retreat to their camp to treat the fallen comrade, realizing this may not be the best climate for farming or hard labour in general."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioGC": {
+            "_pathTillHere": [
+                "ScenarioG3"
+            ],
+            "_allText": [
+                "You conjure up some rain, expecting the farmland to flood and the humans to flee the area.",
+                "Instead, the humans think quickly and set up a basin to capture the water for use at a later, dryer time.",
+                "The rain seems to only make them happier as they relish in the fact that they will not have to manually water their crops."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioGD": {
+            "_pathTillHere": [
+                "ScenarioG4"
+            ],
+            "_allText": [
+                "The farmers plant their seeds, tend to them carefully, and nothing grows.",
+                "They are discouraged, hungry, and desperate.",
+                "You won’t have much use for that patch of land anymore, but it was worth it."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioH": {
+            "_pathTillHere": [
+                "ScenarioGA1",
+                "ScenarioGB1",
+                "ScenarioGC1",
+                "ScenarioGD1"
+            ],
+            "_allText": [
+                "The humans find themselves hungry for meat, and decide to explore your forest for wildlife they can hunt.",
+                "They equip themselves with guns and knives, and head into your tree cover."
+            ],
+            "_options": [
+                "Coax a boar to peacefully approach the hunters.",
+                "Anger a boar, provoking it to attack.",
+                "Coax a herd of boars for the hunters to find."
+            ],
+            "_optionsWeight": [
+                0,
+                10.0,
+                -10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioHA": {
+            "_pathTillHere": [
+                "ScenarioH1"
+            ],
+            "_allText": [
+                "As the hunters trudge along through the forest, they spot a curious looking boar in the distance.",
+                "The boar slowly comes closer, and as it does a hunter lifts his gun and fires away.",
+                "The hunters take their prize back to camp and prepare a feast.",
+                "Sad as it may be, such is the circle of life, and there are plenty more boars to keep the population alive."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioHB": {
+            "_pathTillHere": [
+                "ScenarioH2"
+            ],
+            "_allText": [
+                "As the hunters make their way into your forest, they hear a very aggravated grunting noise.",
+                "As one pulls a branch to the side, a boar comes charging through and gores him in the stomach before running away squealing.",
+                "The humans retreat back to camp, deciding the forest is better left alone and for food to be found elsewhere."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioHC": {
+            "_pathTillHere": [
+                "ScenarioH3"
+            ],
+            "_allText": [
+                "As the hunters stomp through your forest, they hear the scuttling of many feet nearby.",
+                "They peel back some branches and stumble across a giant herd of boars.",
+                "Humans aren’t known for their great foresight, and they unload their weapons on the boars, dragging back far more than they could ever eat.",
+                "This incident could seriously impact the chances of boars surviving as a species in your forest."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "Scenario(H)": {
+            "_pathTillHere": [
+                "ScenarioHA1",
+                "ScenarioHB1",
+                "ScenarioHC1",
+                "ScenarioHD1"
+            ],
+            "_allText": [
+                "Ever since landing on your shore, the humans have been stealing reverent glances at your main feature - an active volcano.",
+                "An offset of the group actually believe in something greater than themselves, and begin an expedition up your cliffside while carrying a crudely made idol."
+            ],
+            "_options": [
+                "Clear their chosen path of any debris.",
+                "Stay out of it.",
+                "Boom, baby, boom! Erupt your volcano."
+            ],
+            "_optionsWeight": [
+                0,
+                -10.0,
+                10.0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ff2929",
+            "_imageConfig": {
+                "island_healthy": false,
+                "island_destroyed": true
+            }
+        },
+        "ScenarioIA": {
+            "_pathTillHere": [
+                "ScenarioI1"
+            ],
+            "_allText": [
+                "You shove aside any large boulders ready to fall, ask the animals to keep away for now, and twist vines away to unblock their journey.",
+                "They place their idol successfully, and focus their worship on their new god: YOU.",
+                "They love this island, and pledge to appease you through a sacrifice being thrown into your volcano once a season. Unexpectedly, this pleases you."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {}
+        },
+        "ScenarioIB": {
+            "_pathTillHere": [
+                "ScenarioI2"
+            ],
+            "_allText": [
+                "You watch as each group member trips over vines and debris, and barely make their way to the top.",
+                "As the tired leader plants the idol at the volcano's edge, the inevitable happens and he falls in.",
+                "Distraught, the group vows to honor his legacy and comes back to install bigger, more intrusive idols in his memory. Your volcano is no longer secular, and you feel dirty."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        },
+        "ScenarioIC": {
+            "_pathTillHere": [
+                "ScenarioI3"
+            ],
+            "_allText": [
+                "Magma flows under your surface through arteries, its kinetic energy building for hundreds of years.",
+                "The cracking boom of your eruption is heard for miles.",
+                "The humans hastily flee as the lava engulfs the entire trail leading up to the volcano’s peak, destroying anything and everything in its path.",
+                "Barely escaping with their lives, the humans will continue to tell the story of how it felt like the spirit of the island itself was against them and their God.",
+                "Fear of supernatural repercussions strengthens, and the humans contemplate if being here is worth it at all."
+            ],
+            "_options": [
+                "Proceed"
+            ],
+            "_optionsWeight": [
+                0
+            ],
+            "_typeSpeed": 0.02,
+            "_textColor": "ffffff",
+            "_imageConfig": {
+                "img1": true,
+                "img2": true
+            }
+        }
     },
     "allImages": [
         {

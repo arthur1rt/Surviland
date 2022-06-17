@@ -27,6 +27,8 @@ public class DialogueController : MonoBehaviour
 
     private bool gameIsOver = false;
 
+    private NewImage background;
+
     void Awake()
     {
         Dictionary<string, NewDialogue> allDiag = new Dictionary<string, NewDialogue>();
@@ -35,7 +37,7 @@ public class DialogueController : MonoBehaviour
         List<string> paths = new List<string> { "START" };
         Dictionary<string, bool> imgConfig = new Dictionary<string, bool>();
         imgConfig.Add("island_healthy", true);
-        List<float> weights = new List<float> { };
+        List<float> weights = new List<float> { -40, 0 };
         NewDialogue dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
         allDiag.Add("aa", dd);
 
@@ -43,9 +45,7 @@ public class DialogueController : MonoBehaviour
         options = new List<string> { "Option 11", "Option 22", "Option 33", "Option 44" };
         paths = new List<string> { "aa1" };
         imgConfig = new Dictionary<string, bool>();
-        imgConfig.Add("island_healthy", false);
-        imgConfig.Add("island_destroyed", true);
-        weights = new List<float> { 10, -10, 0, -25 };
+        weights = new List<float> { -40, -10, 0, -25 };
         dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ff2929", imgConfig);
         allDiag.Add("bb", dd);
 
@@ -105,7 +105,12 @@ public class DialogueController : MonoBehaviour
         endConditions.Add(30, "humans_win");
         endConditions.Add(70, "neutral");
         endConditions.Add(100, "island_win");
-        JsonManager.SaveGame(endConditions, allDiag, imageRef);
+
+        Dictionary<float, string> imageByLife = new Dictionary<float, string>();
+        imageByLife.Add(30, "island_destroyed");
+        imageByLife.Add(70, "island_healthy");
+        imageByLife.Add(100, "island_healthy");
+        JsonManager.SaveGame(endConditions, allDiag, imageByLife, imageRef);
     }
 
     // Start is called before the first frame update
@@ -228,6 +233,28 @@ public class DialogueController : MonoBehaviour
 
     private void UpdateImages()
     {
+        //refreshing bg image if needed
+        List<float> sortedBgConditions = GetSortedList(new List<float>(JsonManager.loadedData.islandImageByHealth.Keys));
+        foreach (float val in sortedBgConditions)
+        {
+            if (gameController.life <= val)
+            {
+                if (imagesDisplaying.ContainsKey(JsonManager.loadedData.islandImageByHealth[val]) == false)
+                {
+                    // this image needs to be inputed there, but other bg image needs to be deleted from there
+                    foreach (string img in JsonManager.loadedData.islandImageByHealth.Values)
+                    {
+                        if (imagesDisplaying.ContainsKey(img))
+                        {
+                            imagesDisplaying.Remove(img);
+                        }
+                    }
+                    imagesDisplaying.Add(JsonManager.loadedData.islandImageByHealth[val], allImagesById[JsonManager.loadedData.islandImageByHealth[val]]);
+                }
+                break;
+            }
+        }
+
         // refresh images displaying to add and remove images
         if (allDialogues.ContainsKey(dialogueDisplaying))
         {
@@ -258,7 +285,6 @@ public class DialogueController : MonoBehaviour
                 imagesNeeded++;
             }
 
-            print("images needed: " + imagesNeeded);
             // updates the number of images needed
             if (imagesNeeded < 0)
             {
@@ -329,10 +355,10 @@ public class DialogueController : MonoBehaviour
         }
 
         optionIndex = number - skippedButtons;
-        print(optionIndex);
         try
         {
             gameController.ChangeLife(allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
+            print("Damage: " + allDialogues[dialogueDisplaying]._optionsWeight[optionIndex - 1]);
         }
         catch
         {
@@ -348,7 +374,6 @@ public class DialogueController : MonoBehaviour
         }
         else
         {
-            print("New dialogue path: " + dialoguePath);
             UpdateDialogue();
             HideAllOptions();
         }
@@ -357,19 +382,7 @@ public class DialogueController : MonoBehaviour
 
     private void GameOver()
     {
-        List<float> sorted = new List<float>();
-        while (sorted.Count < JsonManager.loadedData.gameEndConditions.Keys.Count)
-        {
-            float smallest = 999;
-            foreach (float val in JsonManager.loadedData.gameEndConditions.Keys)
-            {
-                if (sorted.Contains(val) == false && val < smallest)
-                {
-                    smallest = val;
-                }
-            }
-            sorted.Add(smallest);
-        }
+        List<float> sorted = GetSortedList(new List<float>(JsonManager.loadedData.gameEndConditions.Keys));
 
         foreach (float val in sorted)
         {
@@ -382,6 +395,24 @@ public class DialogueController : MonoBehaviour
         UpdateDialogue();
         HideAllOptions();
         gameIsOver = true;
+    }
+
+    private List<float> GetSortedList(List<float> toSort)
+    {
+        List<float> sorted = new List<float>();
+        while (sorted.Count < toSort.Count)
+        {
+            float smallest = 999;
+            foreach (float val in toSort)
+            {
+                if (sorted.Contains(val) == false && val < smallest)
+                {
+                    smallest = val;
+                }
+            }
+            sorted.Add(smallest);
+        }
+        return sorted;
     }
 }
 

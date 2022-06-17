@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
 
     private float maxLife = 100;
     private float minLife = 0;
-    private float currentLife = 100;
+    private float currentLife = 50;
 
     public float life => currentLife;
 

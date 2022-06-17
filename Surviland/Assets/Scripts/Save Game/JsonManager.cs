@@ -24,6 +24,7 @@ public class JsonManager
                     saveData = new JsonData();
                     saveData.dialogues = new Dictionary<string, NewDialogue>();
                     saveData.allImages = new List<NewImage>();
+                    saveData.islandImageByHealth = new Dictionary<float, string>();
                     saveData.gameEndConditions = new Dictionary<float, string>();
                     saveData.gameEndConditions.Add(30, "humans_win");
                     saveData.gameEndConditions.Add(70, "neutral");
@@ -38,12 +39,13 @@ public class JsonManager
     }
 
 
-    public static void SaveGame(Dictionary<float, string> gameEndConditions, Dictionary<string, NewDialogue> allDialogues, List<NewImage> allImages)
+    public static void SaveGame(Dictionary<float, string> gameEndConditions, Dictionary<string, NewDialogue> allDialogues, Dictionary<float, string> bgByLife, List<NewImage> allImages)
     {
         JsonData saveData = new JsonData();
         saveData.dialogues = new Dictionary<string, NewDialogue>(allDialogues);
         saveData.allImages = new List<NewImage>(allImages);
         saveData.gameEndConditions = new Dictionary<float, string>(gameEndConditions);
+        saveData.islandImageByHealth = new Dictionary<float, string>(bgByLife);
 
         string json = JsonConvert.SerializeObject(saveData);
 
@@ -66,6 +68,7 @@ public class JsonManager
 public class JsonData
 {
     public Dictionary<float, string> gameEndConditions;
+    public Dictionary<float, string> islandImageByHealth;
     public Dictionary<string, NewDialogue> dialogues;
     public List<NewImage> allImages;
 }
