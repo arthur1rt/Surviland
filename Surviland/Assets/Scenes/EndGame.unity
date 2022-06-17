@@ -727,9 +727,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Quit
-
-'
+  m_Text: Back To Menu
 --- !u!222 &1371974497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1325,7 +1323,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1555830537}
         m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: BackToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

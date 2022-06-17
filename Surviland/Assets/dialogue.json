@@ -10,24 +10,20 @@
         ],
         "40": [
             "Terrain_03Overdeveloped",
-            "Island_healthy",
             "Forest-DESTROYED",
             "Bushes-HEALTHY"
         ],
         "50": [
             "Terrain_02Settled",
-            "Island_healthy",
             "Forest-HEALTHY",
             "Bushes-HEALTHY"
         ],
         "60": [
             "Terrain_01Explored",
-            "Island_healthy",
             "Forest-HEALTHY",
             "Bushes-HEALTHY"
         ],
         "70": [
-            "Island_healthy",
             "Forest-HEALTHY",
             "Bushes-HEALTHY",
             "fish"
@@ -220,7 +216,7 @@
             ],
             "_allText": [
                 "Wind is an unpredictable element, and you somehow push their boat towards you faster.",
-                "The humans celebrate their speedy approach, excited to land. Bar lowers slightly."
+                "The humans celebrate their speedy approach, excited to land."
             ],
             "_options": [
                 "Proceed"

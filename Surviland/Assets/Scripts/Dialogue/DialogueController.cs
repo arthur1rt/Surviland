@@ -233,68 +233,72 @@ public class DialogueController : MonoBehaviour
     {
         //refreshing images according to island life
         List<float> sortedBgConditions = GetSortedList(new List<float>(JsonManager.loadedData.islandImageByHealth.Keys));
-        bool imagesFound = false;
+
+
+        //remove all images
         foreach (float val in sortedBgConditions)
         {
-            if (!imagesFound && gameController.life <= val)
+            foreach (string imgToRemove in JsonManager.loadedData.islandImageByHealth[val])
             {
-                imagesFound = true;
+                if (imagesDisplaying.ContainsKey(imgToRemove))
+                {
+                    imagesDisplaying.Remove(imgToRemove);
+                }
+            }
+        }
+
+        string show = "";
+        // add the images needed
+        foreach (float val in sortedBgConditions)
+        {
+            if (gameController.life <= val)
+            {
                 foreach (string imgToAdd in JsonManager.loadedData.islandImageByHealth[val])
                 {
                     if (imagesDisplaying.ContainsKey(imgToAdd) == false)
                     {
                         imagesDisplaying.Add(imgToAdd, allImagesById[imgToAdd]);
+                        show += allImagesById[imgToAdd]._imageName + " / ";
                     }
                 }
-            }
-            else
-            {
-                foreach (string imgToRemove in JsonManager.loadedData.islandImageByHealth[val])
-                {
-                    if (imagesDisplaying.ContainsKey(imgToRemove))
-                    {
-                        imagesDisplaying.Remove(imgToRemove);
-                    }
-                }
-
+                break;
             }
         }
 
         // refresh images displaying to add and remove images
         if (allDialogues.ContainsKey(dialogueDisplaying))
         {
-            foreach (string imageKey in allDialogues[dialogueDisplaying]._imageConfig.Keys)
-            {
-                if (imagesDisplaying.ContainsKey(imageKey))
-                {
-                    if (allDialogues[dialogueDisplaying]._imageConfig[imageKey] == false)
-                    {
-                        imagesDisplaying.Remove(imageKey);
-                        continue;
-                    }
-                    else
-                    {
-                        imagesDisplaying[imageKey] = allImagesById[imageKey];
-                    }
-                }
-                else
-                {
-                    if (allImagesById.ContainsKey(imageKey) == false)
-                    {
-                        Debug.LogError("Trying to display image not found: " + imageKey);
-                    }
-                    imagesDisplaying.Add(imageKey, allImagesById[imageKey]);
-                }
-            }
+            // foreach (string imageKey in allDialogues[dialogueDisplaying]._imageConfig.Keys)
+            // {
+            //     if (imagesDisplaying.ContainsKey(imageKey))
+            //     {
+            //         if (allDialogues[dialogueDisplaying]._imageConfig[imageKey] == false)
+            //         {
+            //             imagesDisplaying.Remove(imageKey);
+            //             continue;
+            //         }
+            //         else
+            //         {
+            //             imagesDisplaying[imageKey] = allImagesById[imageKey];
+            //         }
+            //     }
+            //     else
+            //     {
+            //         if (allImagesById.ContainsKey(imageKey) == false)
+            //         {
+            //             Debug.LogError("Trying to display image not found: " + imageKey);
+            //         }
+            //         imagesDisplaying.Add(imageKey, allImagesById[imageKey]);
+            //     }
+            // }
 
             int imagesNeeded = imagesDisplaying.Count - imagesFolder.transform.childCount;
-
             // updates the number of images needed
             if (imagesNeeded < 0)
             {
                 while (imagesNeeded < 0)
                 {
-                    Destroy(imagesFolder.transform.GetChild(0).gameObject);
+                    Destroy(imagesFolder.transform.GetChild(imagesFolder.transform.childCount - 1).gameObject);
                     imagesNeeded++;
                 }
             }
@@ -307,6 +311,7 @@ public class DialogueController : MonoBehaviour
                     imagesNeeded--;
                 }
             }
+
 
             // order all the images to be displayed
             List<NewImage> orderedImages = new List<NewImage>();
