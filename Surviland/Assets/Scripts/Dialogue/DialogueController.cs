@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class DialogueController : MonoBehaviour
 {
     public GameObject imagePrefab;
-    public GameObject imagesFolder;
+    private GameObject imagesFolder;
 
 
     public Dictionary<string, NewDialogue> allDialogues;
@@ -23,6 +23,7 @@ public class DialogueController : MonoBehaviour
     Dictionary<string, NewImage> imagesDisplaying;
 
     private GameController gameController;
+
 
     void Awake()
     {
@@ -65,6 +66,33 @@ public class DialogueController : MonoBehaviour
         allDiag.Add("dd", dd);
 
 
+
+        texts = new List<string> { "Ending 1 too bad" };
+        options = new List<string> { "Island win" };
+        paths = new List<string> { "island_win" };
+        imgConfig = new Dictionary<string, bool>();
+        weights = new List<float> { 0 };
+        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        allDiag.Add("island_win", dd);
+
+        texts = new List<string> { "Ending 2 too bad" };
+        options = new List<string> { "Neutral" };
+        paths = new List<string> { "neutral" };
+        imgConfig = new Dictionary<string, bool>();
+        weights = new List<float> { 0 };
+        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        allDiag.Add("neutral", dd);
+
+        texts = new List<string> { "Ending 3" };
+        options = new List<string> { "Humans win" };
+        paths = new List<string> { "humans_win" };
+        imgConfig = new Dictionary<string, bool>();
+        weights = new List<float> { 0 };
+        dd = new NewDialogue(paths, texts, options, weights, 0.02f, "ffffff", imgConfig);
+        allDiag.Add("humans_win", dd);
+
+
+
         List<NewImage> imageRef = new List<NewImage>();
         imageRef.Add(new NewImage("island_healthy", 0, 0, 0));
         imageRef.Add(new NewImage("island_destroyed", 0, 0, 0));
@@ -81,6 +109,8 @@ public class DialogueController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        imagesFolder = transform.parent.Find("Images").gameObject;
+
         gameController = transform.GetComponent<GameController>();
 
         imagesDisplaying = new Dictionary<string, NewImage>();
